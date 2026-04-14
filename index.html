@@ -5,20 +5,34 @@
   <title>LUXURY BAR 楊貴妃｜名護市の飲み放題バー</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <meta name="description" content="沖縄県名護市のLUXURY BAR 楊貴妃。50分1000円飲み放題。ハイボール嫌いも認めた世界一美味しいハイボール。カラオケ・Wi-Fi・充電OK。">
+  <!-- SEO（軽めベース） -->
+  <meta name="description" content="沖縄県名護市のLUXURY BAR 楊貴妃。50分1000円飲み放題。ハイボール嫌いが美味しいと言った世界一美味しいハイボール。カラオケ・Wi-Fi・充電OK。">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ===== ヘッダー ===== -->
 <header>
   <h1>LUXURY BAR 楊貴妃</h1>
-  <p class="sub">沖縄県名護市のラグジュアリーバー</p>
+
+  <!-- ハンバーガー -->
+  <div class="hamburger" id="hamburger">
+    ☰
+  </div>
+
+  <!-- ナビ -->
+  <nav id="nav">
+    <a href="#concept">CONCEPT</a>
+    <a href="#system">SYSTEM</a>
+    <a href="#service">SERVICE</a>
+    <a href="#access">ACCESS</a>
+    <a href="#instagram">INSTAGRAM</a>
+  </nav>
 </header>
 
-<!-- メインビジュアル -->
+<!-- ===== メインビジュアル ===== -->
 <section class="main-visual">
   <div class="overlay">
     <h2>
@@ -30,24 +44,24 @@
 </section>
 
 <!-- コンセプト -->
-<section class="card">
+<section id="concept" class="card">
   <h2>CONCEPT</h2>
   <p>
     ハイボールが苦手な方でも「美味しい」と言った一杯。<br>
-    他では味わえない特別なハイボールを、ぜひ体験してください。
+    他では味わえない特別なハイボールをぜひ体験してください。
   </p>
 </section>
 
 <!-- システム -->
-<section class="card">
+<section id="system" class="card">
   <h2>SYSTEM</h2>
   <p class="price">50分 1,000円 飲み放題</p>
   <p>男女共通</p>
-  <p>※プレミアムドリンク・フードは別料金</p>
+  <p>※プレミアムドリンク・フード別料金</p>
 </section>
 
 <!-- サービス -->
-<section class="card">
+<section id="service" class="card">
   <h2>SERVICE</h2>
   <div class="grid">
     <div>🎤 カラオケ</div>
@@ -56,8 +70,8 @@
   </div>
 </section>
 
-<!-- 店舗情報 -->
-<section class="card">
+<!-- アクセス -->
+<section id="access" class="card">
   <h2>ACCESS</h2>
 
   <p>営業時間：21:00〜5:00</p>
@@ -87,10 +101,10 @@
 </section>
 
 <!-- Instagram -->
-<section class="card">
+<section id="instagram" class="card">
   <h2>INSTAGRAM</h2>
 
-  <p>最新情報・店内の様子はこちら</p>
+  <p>最新情報・店内の雰囲気はInstagramで発信しています</p>
 
   <a href="https://www.instagram.com/bar_youkihi/"
      target="_blank"
@@ -103,6 +117,16 @@
 <footer>
   <p>© LUXURY BAR 楊貴妃</p>
 </footer>
+
+<!-- JS（ハンバーガー） -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("nav");
+
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+</script>
 
 </body>
 </html>
