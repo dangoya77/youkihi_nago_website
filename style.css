@@ -11,24 +11,29 @@ header {
   top: 0;
   width: 100%;
   background: #111;
-  padding: 15px;
+  padding: 15px 15px; /* ←左右を明示 */
   text-align: center;
   z-index: 1000;
+  box-sizing: border-box; /* ←これが超重要（はみ出し防止） */
 }
 
-/* 👇 これが今回のキモ（ズレ修正） */
+/* アンカーずれ防止 */
 section {
   scroll-margin-top: 80px;
 }
 
+/* ハンバーガー */
 .hamburger {
   position: absolute;
-  right: 15px;
-  top: 15px;
-  font-size: 26px;
+  right: 10px; /* ←少し内側に */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
   cursor: pointer;
+  padding: 8px 12px; /* ←押しやすく */
 }
 
+/* ナビ */
 nav {
   display: none;
   flex-direction: row;
