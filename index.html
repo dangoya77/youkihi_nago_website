@@ -153,16 +153,24 @@
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("nav");
 
-// 開閉
-hamburger.addEventListener("click", () => {
+// ハンバーガー開閉
+hamburger.addEventListener("click", (e) => {
+  e.stopPropagation();
   nav.classList.toggle("open");
 });
 
-// メニュークリックで閉じる（←追加）
+// メニュークリックで閉じる（確実に動作）
 document.querySelectorAll("#nav a").forEach(link => {
   link.addEventListener("click", () => {
     nav.classList.remove("open");
   });
+});
+
+// 外クリックで閉じる（スマホ対策）
+document.addEventListener("click", (e) => {
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove("open");
+  }
 });
 </script>
 
